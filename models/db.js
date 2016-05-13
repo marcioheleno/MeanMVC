@@ -4,7 +4,7 @@
 // primeiro passo
 var mongoose = require('mongoose');
 var graceFullShutdown;
-var dbURI = 'mongodb://localhost/loc8r';
+var dbURI = 'mongodb://marcio012:MARcriacao304860@ds047365.mlab.com:47365/heroku_6th5qrqc';
   if (process.env.NODE_ENV === 'production') {
     // dbURI = 'mongodb://marcio012:MARcriacao304860@ds047365.mlab.com:47365/heroku_6th5qrqc';
    // lembrando que para isso acontercer tem que se lançado no terminal.
