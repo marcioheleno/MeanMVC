@@ -62,4 +62,4 @@ process.on('SIGTERM', function () {
   });
 });
 
-require('./locationsDb');
+require('./locations');
