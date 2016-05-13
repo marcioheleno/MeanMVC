@@ -1,0 +1,8 @@
+mongodb://heroku_6th5qrqc:bhok7mher9udj4fhlbrc6skil9@ds047365.mlab.com:47365/heroku_6th5qrqc
+
+
+mongodb://marcio012:MARcriacao304860@ds047365.mlab.com:47365/heroku_6th5qrqc
+
+=>  Comando usado para conectar localmente ao banco de dados na nuvem
+    NODE_ENV=production MONGOLAB_URI=mongodb://marcio012:MARcriacao304860@ds047365.mlab.com:47365/heroku_6th5qrqc nodemon start
+

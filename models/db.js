@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var graceFullShutdown;
 var dbURI = 'mongodb://localhost/loc8r';
   if (process.env.NODE_ENV === 'production') {
-    // dbURI = 'mongodb://marcio:MAR120881@ds021182.mlab.com:21182/heroku_rgrpt31g';
+    // dbURI = 'mongodb://marcio012:MARcriacao304860@ds047365.mlab.com:47365/heroku_6th5qrqc';
    // lembrando que para isso acontercer tem que se lançado no terminal.
    // $ NODE_ENV=production MONGOLAB_URI=mongodb://<username>:<password>@<hostname>:<port>/<database> nodemon start
    dbURI = process.env.MONGOLAB_URI;
@@ -14,7 +14,7 @@ var dbURI = 'mongodb://localhost/loc8r';
 mongoose.connect(dbURI);
 
 mongoose.connection.on('connected', function () {
-  console.log('Mongoose esta conectado' + dbURI);
+  console.log('Mongoose esta conectado ' + dbURI);
 });
 mongoose.connection.on('error', function (err) {
   console.log('Mongoose esta conectado' + err);
@@ -23,6 +23,10 @@ mongoose.connection.on('disconectado', function () {
   console.log('Mongoose esta disconectado');
 });
 
+
+mongoose.connection.on('connected', function () {
+  console.log('Estmaos conectado a base de dados ' + dbURI)
+});
 
 //LogDB
 
