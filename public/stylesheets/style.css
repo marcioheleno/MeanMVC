@@ -1,4 +1,6 @@
 @import url(../bootstrap/dist/css/bootstrap.min.css);
 @import url(bootstrap-amalia.css);
+body {
+  background-color: #3c2d61; }
 
 /*# sourceMappingURL=style.css.map */
