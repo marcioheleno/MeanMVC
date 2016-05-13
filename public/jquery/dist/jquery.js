@@ -8303,7 +8303,7 @@ jQuery.extend( {
 		global: true,
 		processData: true,
 		async: true,
-		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		contentType: "application/x-www.js-form-urlencoded; charset=UTF-8",
 		/*
 		timeout: 0,
 		data: null,
@@ -9307,7 +9307,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			"url" :
 			typeof s.data === "string" &&
 				( s.contentType || "" )
-					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
+					.indexOf( "application/x-www.js-form-urlencoded" ) === 0 &&
 				rjsonp.test( s.data ) && "data"
 		);
 
