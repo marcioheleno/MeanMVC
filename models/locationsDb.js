@@ -50,4 +50,4 @@ var locationSchema = new mongoose.Schema({
   comentarios: [comentarioSchema]
 });
 
-mongoose.model('Location', locationSchema);
+mongoose.model('Locations', locationSchema);
