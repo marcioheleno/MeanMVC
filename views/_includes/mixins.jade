@@ -1,0 +1,11 @@
+//
+   Created by marcioheleno on 09/05/16.
+
+// mixin para classificação
+mixin classificacao (classificacao)
+  -for (var i = 1; i <= classificacao; i++)
+    span.glyphicon.glyphicon-star
+  -for (var i = classificacao; i < 5; i++)
+    span.glyphicon.glyphicon-star-empty
+
+

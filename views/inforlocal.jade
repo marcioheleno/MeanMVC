@@ -1,0 +1,67 @@
+//
+   Created by marcioheleno on 07/05/16.
+
+extends layout
+block content
+  .row.page-header: .col-lg-12
+      h1=pageHeader.title
+  .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          p.rating
+            +classificacao(locationArray.classificacao)
+            //span.glyphicon.glyphicon-star
+            //span.glyphicon.glyphicon-star
+            //span.glyphicon.glyphicon-star
+            //span.glyphicon.glyphicon-star-empty
+            //span.glyphicon.glyphicon-star-empty
+          p=locationArray.endereco
+            .panel.panel-primary
+              .panel-heading
+                h2.panel-title Opening hours
+              .panel-body
+                each time in locationArray.horarioDeFuncionamento
+                  p
+                    | #{time.dias } :
+                    if time.quandoFecha
+                      | fechado
+                    else
+                      | #{time.abertura} - #{time.fechado}
+            .panel.panel-primary
+              .panel-heading
+                h2.panel-title Facilidades
+              .panel-body
+                each facilidades in locationArray.facilidades
+
+                  span.label.label-warning
+                    span.glyphicon.glyphicon-ok
+                    | &nbsp;#{facilidades}
+                  | &nbsp;
+
+        .col-xs-12.col-sm-6.location-map
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Location map
+            .panel-body
+              img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=#{locationArray.coordenadas.lat}, #{locationArray.coordenadas.lng}&zoom=17&size=400x350&sensor=false&markers=#{locationArray.coordenadas.lat},#{locationArray.coordenadas.lng}&scale=2')
+      .row
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              a.btn.btn-default.pull-right(href='/inforlocal/comentario') add review
+              h2.panel-title Customer reviews
+            .panel-body.review-container
+              each opniao in locationArray.comentarios
+                .row
+                  .review
+                    .well.well-sm.review-header
+                      span.rating
+                        +classificacao(opniao.classificacao)
+                      span.reviewAuthor #{opniao.autor}
+                      small.reviewTimestamp #{opniao.timestamp}
+                    .col-xs-12
+                        p !{(opniao.comentario).replace(/\n/g, '<br/>')}
+    .col-xs-12.col-md-3
+      p.lead #{nome} #{sidebar.contexto}
+      p= sidebar.callToAction

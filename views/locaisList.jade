@@ -1,0 +1,77 @@
+//
+   Created by marcioheleno on 07/05/16.
+
+extends layout
+include _includes/mixins
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1=pageHeader.title
+          small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        // primeiro lugar listado === loop começaria aqui
+        //  observação em relação ao loop em Jade === each [acesso ao dado] in [nome do array]
+        each locations in locationsArray
+          .col-xs-12.list-group-item
+            h4
+              a(href="/inforlocal")=locations.nome
+              small &nbsp;
+                +classificacao(locations.classificacao)
+                  span.glyphicon.glyphicon-star-empty
+              span.badge.pull-right.badge-default=locations.distancia
+            p.address=locations.endereco
+            p
+              each facilidades in locations.facilidades
+                span.label.label-warning= facilidades
+                | &nbsp;
+                //span.label.label-warning Food
+                  //| &nbsp;
+                  //span.label.label-warning Premium wifi
+                  //| &nbsp;
+
+        //// segundo lugar listado
+        //.col-xs-12.list-group-item
+        //  h4
+        //    a(href="/localInfo")=locations.nome
+        //    small &nbsp;
+        //      span.glyphicon.glyphicon-star
+        //      span.glyphicon.glyphicon-star
+        //      span.glyphicon.glyphicon-star-empty
+        //      span.glyphicon.glyphicon-star-empty
+        //      span.glyphicon.glyphicon-star-empty
+        //    span.badge.pull-right.badge-default 50m
+        //  p.address Rua Eurico Medina, 1020 - Henrique Jorge, Fortaleza-Ce
+        //  p
+        //    span.label.label-warning Refrigerantes Gelados
+        //    | &nbsp;
+        //    span.label.label-warning Bombons
+        //    | &nbsp;
+        //    span.label.label-warning Batata Ruffus
+        //    | &nbsp;
+
+        //// terceiro lugar listado
+        //.col-xs-12.list-group-item
+        //  h4
+        //    a(href="/localInfo")=locations.nome
+        //    small &nbsp;
+        //      span.glyphicon.glyphicon-star
+        //      span.glyphicon.glyphicon-star
+        //      span.glyphicon.glyphicon-star
+        //      span.glyphicon.glyphicon-star
+        //      span.glyphicon.glyphicon-star-empty
+        //    span.badge.pull-right.badge-default 450m
+        //  p.address Rua Prof. Miramar da Ponte, S/N - Henrique Jorge, Fortaleza-Ce
+        //  p
+        //    span.label.label-warning Picolé
+        //    | &nbsp;
+        //    span.label.label-warning Ração do Dédé
+        //    | &nbsp;
+        //    span.label.label-warning Aceita Cartão
+        //    | &nbsp;
+
+    .col-xs-12.col-sm-4
+      p.lead=sidebar

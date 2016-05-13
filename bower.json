@@ -1,0 +1,22 @@
+{
+  "name": "Es-mean",
+  "description": "teste de bower",
+  "main": "",
+  "authors": [
+    "marcioheleno <marcio@marcioheleno.website>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/marcioheleno/Es-mean2",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

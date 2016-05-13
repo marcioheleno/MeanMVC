@@ -1,0 +1,13 @@
+//
+   Created by marcioheleno on 07/05/16.
+
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-md-12.col-sm-6
+        h1= title
+  .row
+    .col-md-12.com-sm-6
+      p !{(content).replace(/\n/g,'<br/>'))}
